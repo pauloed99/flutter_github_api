@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_github_api/views/pages/repositories_list_page.dart';
+import 'package:flutter_github_api/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 void main() => runApp(const MyApp());
@@ -15,10 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '',
-      routes: {
-        '': (_) => const RepositoriesListPage()
-      },
+      getPages: AppPages.routes,
     );
   }
 }
