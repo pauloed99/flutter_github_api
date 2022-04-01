@@ -13,7 +13,7 @@ class UserRepositoriesListWidget extends GetView<UserRepositoriesController> {
     return controller.obx(
       (state) => Align(
         child: SizedBox(
-          width: width * .8,
+          width: width * .9,
           child: ListView.builder(
             itemCount: state!.length,
             itemBuilder: (_, index) => InfoRepoCardWidget(

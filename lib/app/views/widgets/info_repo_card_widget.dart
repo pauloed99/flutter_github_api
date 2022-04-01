@@ -23,7 +23,6 @@ class InfoRepoCardWidget extends StatelessWidget {
       ),
       alignment: Alignment.center,
       height: height * .2,
-      width: width * .8,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
