@@ -1,8 +1,8 @@
 class User {
-  String? login;
+  late String login;
   int? id;
   String? nodeId;
-  String? avatarUrl;
+  late String avatarUrl;
   String? gravatarId;
   String? url;
   String? htmlUrl;
@@ -27,16 +27,16 @@ class User {
   String? twitterUsername;
   int? publicRepos;
   int? publicGists;
-  int? followers;
-  int? following;
+  late int followers;
+  late int following;
   String? createdAt;
   String? updatedAt;
 
   User(
-      {this.login,
+      {required this.login,
       this.id,
       this.nodeId,
-      this.avatarUrl,
+      required this.avatarUrl,
       this.gravatarId,
       this.url,
       this.htmlUrl,
@@ -61,8 +61,8 @@ class User {
       this.twitterUsername,
       this.publicRepos,
       this.publicGists,
-      this.followers,
-      this.following,
+      required this.followers,
+      required this.following,
       this.createdAt,
       this.updatedAt});
 
@@ -102,39 +102,39 @@ class User {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['login'] = this.login;
-    data['id'] = this.id;
-    data['node_id'] = this.nodeId;
-    data['avatar_url'] = this.avatarUrl;
-    data['gravatar_id'] = this.gravatarId;
-    data['url'] = this.url;
-    data['html_url'] = this.htmlUrl;
-    data['followers_url'] = this.followersUrl;
-    data['following_url'] = this.followingUrl;
-    data['gists_url'] = this.gistsUrl;
-    data['starred_url'] = this.starredUrl;
-    data['subscriptions_url'] = this.subscriptionsUrl;
-    data['organizations_url'] = this.organizationsUrl;
-    data['repos_url'] = this.reposUrl;
-    data['events_url'] = this.eventsUrl;
-    data['received_events_url'] = this.receivedEventsUrl;
-    data['type'] = this.type;
-    data['site_admin'] = this.siteAdmin;
-    data['name'] = this.name;
-    data['company'] = this.company;
-    data['blog'] = this.blog;
-    data['location'] = this.location;
-    data['email'] = this.email;
-    data['hireable'] = this.hireable;
-    data['bio'] = this.bio;
-    data['twitter_username'] = this.twitterUsername;
-    data['public_repos'] = this.publicRepos;
-    data['public_gists'] = this.publicGists;
-    data['followers'] = this.followers;
-    data['following'] = this.following;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['login'] = login;
+    data['id'] = id;
+    data['node_id'] = nodeId;
+    data['avatar_url'] = avatarUrl;
+    data['gravatar_id'] = gravatarId;
+    data['url'] = url;
+    data['html_url'] = htmlUrl;
+    data['followers_url'] = followersUrl;
+    data['following_url'] = followingUrl;
+    data['gists_url'] = gistsUrl;
+    data['starred_url'] = starredUrl;
+    data['subscriptions_url'] = subscriptionsUrl;
+    data['organizations_url'] = organizationsUrl;
+    data['repos_url'] = reposUrl;
+    data['events_url'] = eventsUrl;
+    data['received_events_url'] = receivedEventsUrl;
+    data['type'] = type;
+    data['site_admin'] = siteAdmin;
+    data['name'] = name;
+    data['company'] = company;
+    data['blog'] = blog;
+    data['location'] = location;
+    data['email'] = email;
+    data['hireable'] = hireable;
+    data['bio'] = bio;
+    data['twitter_username'] = twitterUsername;
+    data['public_repos'] = publicRepos;
+    data['public_gists'] = publicGists;
+    data['followers'] = followers;
+    data['following'] = following;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
     return data;
   }
 }
