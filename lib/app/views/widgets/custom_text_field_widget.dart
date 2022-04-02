@@ -19,7 +19,6 @@ class CustomTextFieldWidget extends GetView<UserController> {
         labelStyle: TextStyle(fontSize: width * .045),
         prefixIcon: const Icon(Icons.search),
       ),
-      onChanged: (value) => controller.getAnyUser()
     );
   }
 }

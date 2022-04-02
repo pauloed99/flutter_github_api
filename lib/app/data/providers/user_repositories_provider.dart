@@ -11,7 +11,16 @@ class UserRepositoriesProvider {
       final response = await dio.get<List>('$name/repos');
       return response.data!.map((e) => UserRepositories.fromJson(e)).toList();
     } on DioError catch (e) {
-      throw Exception(e.message);
+      if (e.response!.statusCode == 404) {
+        throw Exception('Usuário não encontrado!');
+      }
+      if (e.response!.statusCode == 403) {
+        throw Exception(
+          'O servidor atingiu um número máximo de requisições, tente mais tarde!',
+        );
+      } else {
+        throw Exception('Conecte-se à internet');
+      }
     }
   }
 }

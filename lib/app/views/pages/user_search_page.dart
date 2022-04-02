@@ -23,6 +23,20 @@ class UserSearchPage extends GetView<UserController> {
         child: Column(
           children: [
             const CustomTextFieldWidget(),
+            SizedBox(height: height * .01),
+            OutlinedButton(
+              onPressed: () => controller.getAnyUser(),
+              child: const CustomTextWidget(
+                text: 'Pesquisar',
+                color: Colors.white,
+              ),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(width * .05),
+                ),
+              ),
+            ),
             SizedBox(height: height * .1),
             controller.obx(
               (state) => const UserCardWidget(),

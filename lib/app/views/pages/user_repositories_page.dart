@@ -30,7 +30,7 @@ class UserRepositoriesPage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Expanded(child: UserRepositoriesListWidget()),
+          const Expanded(child: UserRepositoriesListWidget()),
         ],
       ),
     );

@@ -39,51 +39,53 @@ class InfoRepoCardWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomTextWidget(
-                text: userRepositories.name,
-                fontWeight: FontWeight.bold,
-                fontSize: width * .045,
-              ),
-              SizedBox(height: height * .01),
-              CustomTextWidget(
-                text: 'linguagem: ${userRepositories.language ?? ''}',
-                fontWeight: FontWeight.bold,
-                fontSize: width * .04,
-              ),
-              SizedBox(height: height * .02),
-              CustomTextWidget(
-                text: 'Criado em: ${userRepositories.createdAt}',
-                fontWeight: FontWeight.bold,
-                fontSize: width * .04,
-              ),
-              CustomTextWidget(
-                text: 'Atualizado em: ${userRepositories.updatedAt}',
-                fontWeight: FontWeight.bold,
-                fontSize: width * .04,
-              ),
-              SizedBox(height: height * .01),
-              Row(
-                children: [
-                  const Icon(Icons.star_rate, color: Colors.blue),
-                  CustomTextWidget(
-                    text: userRepositories.stargazersCount.toString(),
-                    fontSize: width * .045,
-                  ),
-                  SizedBox(width: width * .3),
-                  GestureDetector(
-                    onTap: () => launch(userRepositories.htmlUrl),
-                    child: CustomTextWidget(
-                      text: 'Link do Repositório',
-                      color: Colors.blue,
-                      fontSize: width * .04,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomTextWidget(
+                  text: userRepositories.name,
+                  fontWeight: FontWeight.bold,
+                  fontSize: width * .045,
+                ),
+                SizedBox(height: height * .01),
+                CustomTextWidget(
+                  text: 'linguagem: ${userRepositories.language ?? ''}',
+                  fontWeight: FontWeight.bold,
+                  fontSize: width * .04,
+                ),
+                SizedBox(height: height * .02),
+                CustomTextWidget(
+                  text: 'Criado em: ${userRepositories.createdAt}',
+                  fontWeight: FontWeight.bold,
+                  fontSize: width * .04,
+                ),
+                CustomTextWidget(
+                  text: 'Atualizado em: ${userRepositories.updatedAt}',
+                  fontWeight: FontWeight.bold,
+                  fontSize: width * .04,
+                ),
+                SizedBox(height: height * .01),
+                Row(
+                  children: [
+                    const Icon(Icons.star_rate, color: Colors.blue),
+                    CustomTextWidget(
+                      text: userRepositories.stargazersCount.toString(),
+                      fontSize: width * .045,
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    SizedBox(width: width * .3),
+                    GestureDetector(
+                      onTap: () => launch(userRepositories.htmlUrl),
+                      child: CustomTextWidget(
+                        text: 'Link do Repositório',
+                        color: Colors.blue,
+                        fontSize: width * .04,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
